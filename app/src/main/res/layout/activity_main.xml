@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/backgroundLight"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 1. Jam Digital -->
+        <TextView
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textSize="26sp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_card" />
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/primaryGreen" />
+
+        <TextView
+            android:id="@+id/appSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_subtitle"
+            android:textColor="@color/grayText"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Lokasi -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location_label"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerLocation"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Jadwal Sholat -->
+        <LinearLayout
+            android:id="@+id/layoutPrayerTimes"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Sholat Berikutnya -->
+        <LinearLayout
+            android:id="@+id/layoutNextPrayer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_green_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/nextPrayerTitle"
+                android:text="@string/next_prayer"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/nextPrayerName"
+                android:text="@string/placeholder_prayer_name"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/nextPrayerTime"
+                android:text="@string/placeholder_prayer_time"
+                android:textColor="@color/white"
+                android:layout_marginTop="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Pengingat & Arah Kiblat -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:padding="16dp">
+
+            <TextView
+                android:text="@string/reminder_settings"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Switch Reminder -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp"
+                android:minHeight="48dp">
+
+                <TextView
+                    android:text="@string/activate_reminder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchReminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Tombol Kiblat -->
+            <Button
+                android:id="@+id/buttonQibla"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Arah Kiblat"
+                android:layout_marginTop="16dp" />
+
+            <!-- ✅ Tombol Tes Adzan -->
+            <Button
+                android:id="@+id/buttonTestAdzan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tes Putar Adzan"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

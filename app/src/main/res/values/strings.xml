@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SholatReminder</string>
+    <string name="app_subtitle">Pengingat Waktu Salat Harian</string>
+    <string name="location_label">Pilih Lokasi</string>
+    <string name="next_prayer">Sholat Berikutnya</string>
+    <string name="reminder_settings">Pengaturan Pengingat</string>
+    <string name="activate_reminder">Aktifkan Pengingat</string>
+    <string name="imsak_reminder">Pengingat Imsak</string>
+    <string name="before15_reminder">Pengingat 15 Menit Sebelum</string>
+    <string name="placeholder_prayer_name">Dzuhur</string>
+    <string name="placeholder_prayer_time">11:45 (dalam 2 jam 15 menit)</string>
+    <string name="placeholder_clock">00:00:00</string>
+</resources>

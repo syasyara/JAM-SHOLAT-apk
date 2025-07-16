@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jamsholat">
+
+    <!-- Izin lokasi (untuk fitur kiblat atau lokasi waktu sholat) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Izin untuk menjadwalkan alarm secara tepat -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <!-- Izin notifikasi (wajib sejak Android 13 / API 33) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"
+        android:required="false" />
+
+    <!-- Izin untuk menjalankan foreground service (jika Android 9+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="Aplikasi Sholat"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Activity utama -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activity arah kiblat (jika ada) -->
+        <activity android:name=".QiblaActivity" />
+
+        <!-- Receiver untuk pengingat waktu sholat dan adzan -->
+        <receiver
+            android:name=".PrayerReminderReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.example.jamsholat.ACTION_PRAYER_REMINDER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ✅ Tambahan: Service untuk memutar suara adzan -->
+        <service
+            android:name=".AdzanService"
+            android:exported="false" />
+    </application>
+</manifest>
